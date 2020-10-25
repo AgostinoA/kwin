@@ -235,10 +235,10 @@ void KCMKWinRules::importFromFile(const QUrl &path)
     updateNeedsSave();
 }
 
+} // namespace
+
 K_PLUGIN_FACTORY_WITH_JSON(KCMKWinRulesFactory, "kcm_kwinrules.json",
                            registerPlugin<KWin::KCMKWinRules>();
                            registerPlugin<KWin::RuleBookData>(););
-
-} // namespace
 
 #include "kcmrules.moc"
