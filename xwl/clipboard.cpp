@@ -70,6 +70,10 @@ void Clipboard::wlSelectionChanged(KWaylandServer::AbstractDataSource *dsi)
         return;
     }
 
+    if (dsi && dsi->mimeTypes().contains(QLatin1String("application/x-kde-onlyReplaceEmpty"))) {
+        return;
+    }
+
     if (!ownsSelection(dsi)) {
         // Wayland native client provides new selection
         if (!m_checkConnection) {
